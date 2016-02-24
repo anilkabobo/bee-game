@@ -53,14 +53,10 @@ table {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #DAE8F5;
+	background: #fff;
 	background-image: url('img/grass.png');
 	background-position: 0 100%;
 	background-repeat: repeat-x;
-}
-
-.main-btn {
-	position: absolute;
 }
 
 .bee {
@@ -70,6 +66,7 @@ table {
 	height: 100px;
 	position: absolute;
 	border: none;
+	transition: all 0.2s;
 }
 
 .queen {
@@ -86,14 +83,49 @@ table {
 	background-image: url('img/drone-bee.svg');
 }
 
-.drone:nth-child(2n) {
-	transform: rotateY(180deg);
-}
-
 .hit {
 	transform: scale(1.4, 1.4) translate(0, -20px);
 }
 
-.drone.hit:nth-child(2n) {
-	transform: rotateY(180deg) scale(1.4, 1.4) translate(0, -20px);
+.dead {
+	transition: all 0s;
+	animation: die 1s forwards;
+}
+
+.main-btn {
+	border: none;
+	font-size: 2em;
+	width: 3em;
+	line-height: 3em;
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	background: #FFEB3B;
+	border-radius: 100%;
+	color: #537E84;
+	text-transform: uppercase;
+	box-shadow: 0 0 25px 15px #FFF7B1;
+	cursor: pointer;
+}
+
+.main-btn:hover {
+	background: #FDE82F;
+}
+
+.main-btn:active {
+	box-shadow: 0 0 28px 19px #FFF7B1;
+}
+
+.main-btn:focus {
+	outline: none;
+}
+
+@keyframes die {
+  0%   { 
+  	opacity: 1; 
+  }
+  100% { 
+  	transform: translate(0, 150px) rotate(90deg);
+		opacity: 0;
+  }
 }

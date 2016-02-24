@@ -17,11 +17,11 @@ Bee.prototype.hitBee = function() {
 	}
 	setTimeout(function() {	
 		self.element.className = self.element.className.replace(' hit', '');
-	}, 100);
+	}, 200);
 }
 
 Bee.prototype.createBee= function(name) {
-	this.element = document.createElement('button');
+	this.element = document.createElement('div');
 	this.element.className = 'bee ' + name;
 	this.element.style.left = this.position.left + '%';
 	this.element.style.top = this.position.top + '%';
@@ -29,8 +29,9 @@ Bee.prototype.createBee= function(name) {
 }
 
 Bee.prototype.die = function() {
-	wrapper.removeChild(this.element);
-	beeGame.allBees.splice(beeGame.allBees.indexOf(this), 1)
+	var self = this;
+	self.element.className += ' dead';
+	beeGame.allBees.splice(beeGame.allBees.indexOf(self), 1)
 }
 
 var beeGame = (function() {
