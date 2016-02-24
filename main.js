@@ -1,7 +1,7 @@
 var Bee = function(conf) {
 	this.position = {
-		left: Math.random() * 90 + 5,
-		top: Math.random() * 90 + 5
+		left: Math.random() * 70 + 10,
+		top: Math.random() * 70 + 5
 	};
 	this.life = conf.life || 0;
 	this.hit = conf.hit || 0;
