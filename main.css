@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,120 +12,181 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+  content: '';
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.wrapper {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background: #fff;
-	background-image: url('img/grass.png');
-	background-position: 0 100%;
-	background-repeat: repeat-x;
+.wrapper, .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  background-image: url('img/grass.png');
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+}
+
+.overlay-inner {
+  font: 4em sans-serif;
+  width: 400px;
+  height: 1em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #4FBA53;
+  text-shadow: 1px 1px 5px #08390A;
+}
+
+.overlay {
+  display: none;
+}
+
+.new-game .overlay {
+  display: block;
+  animation: fade-out 3s forwards;
 }
 
 .bee {
   background-size: 100% 100%;
   background-color: transparent;
-	width: 100px;
-	height: 100px;
-	position: absolute;
-	border: none;
-	transition: all 0.2s;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border: none;
+  transition: all 0.2s;
 }
 
 .queen {
-	background-image: url('img/queen-bee.svg');
-	width: 150px;
-	height: 150px;
+  background-image: url('img/queen-bee.svg');
+  width: 150px;
+  height: 150px;
 }
 
 .worker {
-	background-image: url('img/worker-bee.svg');
+  background-image: url('img/worker-bee.svg');
 }
 
 .drone {
-	background-image: url('img/drone-bee.svg');
+  background-image: url('img/drone-bee.svg');
 }
 
 .hit {
-	transform: scale(1.4, 1.4) translate(0, -20px);
+  transform: scale(1.4, 1.4) translate(0, -20px);
 }
 
 .dead {
-	transition: all 0s;
-	animation: die 1s forwards;
+  transition: all 0s;
+  animation: die 1s forwards;
+}
+
+.life-range {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: red;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ddd;
+  box-sizing: border-box;
+}
+
+.life-range:before {
+  content: '';
+  background: #b4ddb4;
+  background: -moz-linear-gradient(top,  #b4ddb4 0%, #087a00 41%, #007207 65%, #008a00 86%);
+  background: -webkit-linear-gradient(top,  #b4ddb4 0%,#087a00 41%,#007207 65%,#008a00 86%);
+  background: linear-gradient(to bottom,  #b4ddb4 0%,#087a00 41%,#007207 65%,#008a00 86%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', endColorstr='#008a00',GradientType=0 );
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .main-btn {
-	border: none;
-	font-size: 2em;
-	width: 3em;
-	line-height: 3em;
-	position: absolute;
-	top: 1em;
-	left: 1em;
-	background: #FFEB3B;
-	border-radius: 100%;
-	color: #537E84;
-	text-transform: uppercase;
-	box-shadow: 0 0 25px 15px #FFF7B1;
-	cursor: pointer;
+  border: none;
+  font-size: 2em;
+  width: 3em;
+  line-height: 3em;
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  background: #FFEB3B;
+  border-radius: 100%;
+  color: #537E84;
+  text-transform: uppercase;
+  box-shadow: 0 0 25px 15px #FFF7B1;
+  cursor: pointer;
 }
 
 .main-btn:hover {
-	background: #FDE82F;
+  background: #FDE82F;
 }
 
 .main-btn:active {
-	box-shadow: 0 0 28px 19px #FFF7B1;
+  box-shadow: 0 0 28px 19px #FFF7B1;
 }
 
 .main-btn:focus {
-	outline: none;
+  outline: none;
 }
 
 @keyframes die {
-  0%   { 
-  	opacity: 1; 
+  0%   {
+    opacity: 1;
   }
-  100% { 
-  	transform: translate(0, 150px) rotate(90deg);
-		opacity: 0;
+  100% {
+    transform: translate(0, 150px) rotate(90deg);
+    opacity: 0;
   }
 }
+
+@keyframes fade-out {
+  0%   {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
