@@ -1,3 +1,3 @@
 # Kill bees rendomly. Such fun.
 
-<a href="http://anilkabobo.github.io/bee-game/">DEMO</a>
+Try it <a href="http://anilkabobo.github.io/bee-game/">HERE</a>
