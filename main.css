@@ -89,8 +89,6 @@ table {
   background-color: transparent;
   width: 100px;
   height: 100px;
-  max-width: 15%;
-  max-height: 15%;
   position: absolute;
   border: none;
   transition: all 0.2s;
@@ -100,8 +98,6 @@ table {
   background-image: url('img/queen-bee.svg');
   width: 150px;
   height: 150px;
-  max-width: 20%;
-  max-height: 20%;
 }
 
 .worker {
